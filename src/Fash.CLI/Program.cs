@@ -32,10 +32,7 @@ namespace Fash.CLI
                 var hasher = new HasherBuilder()
                     .SetInput(fs)
                     .SetAlgorithm(hashAlgorithm)
-                    .SetRepresentation(new HexRepresentation()
-                    {
-                        IsUppercase = true
-                    })
+                    .SetRepresentation(new Base64Representation())
                     .Build();
 
                 var result = hasher.Hash();

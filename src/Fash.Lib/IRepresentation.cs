@@ -6,7 +6,6 @@ namespace Fash.Lib
 {
     public interface IRepresentation
     {
-        bool IsUppercase { get; set; }
         string Represent(byte[] input);
     }
 }
