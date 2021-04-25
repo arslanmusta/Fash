@@ -15,42 +15,28 @@ namespace Fash.CLI
             
             var filePath = args[0];
             var algorithm = args[1];
-
-            HashAlgorithm hashAlgorithm = new SHA1Managed();
-
-            if (algorithm == "SHA512")
+            
+            HashAlgorithm hashAlgorithm = algorithm switch
             {
-                hashAlgorithm = new SHA512Managed();
-            }
-            else if (algorithm == "SHA256")
+                "SHA512" => new SHA512Managed(),
+                "SHA256" => new SHA256Managed(),
+                "MD5" => new MD5CryptoServiceProvider(),
+                _ => new SHA1Managed()
+            };
+            
+            if (filePath != null)
             {
-                hashAlgorithm = new SHA256Managed();
-            }
-            else if (algorithm == "MD5")
-            {
-                hashAlgorithm = new MD5CryptoServiceProvider();
-            }
+                using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+                var hash = hashAlgorithm.ComputeHash(fs);
 
-
-
-            if (filePath != null) 
-            {
-                
-                using (var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-                {
-                    var hash = hashAlgorithm.ComputeHash(fs);
-                    //var base64 = Convert.ToBase64String(hash);
-                    //Console.WriteLine(base64);
-
-                    var stringBuilder = new StringBuilder();
+                var stringBuilder = new StringBuilder();
                     
-                    foreach (var b in hash)
-                    {
-                        stringBuilder.Append(b.ToString("x2"));
-                    }
-
-                    Console.WriteLine(stringBuilder.ToString());
+                foreach (var b in hash)
+                {
+                    stringBuilder.Append(b.ToString("x2"));
                 }
+
+                Console.WriteLine(stringBuilder.ToString());
             }
         }
     }
