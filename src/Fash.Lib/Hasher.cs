@@ -23,7 +23,7 @@ namespace Fash.Lib
         public string Hash()
         {
             _input.Position = _input.Length;
-            _salt.CopyTo(_input);
+            _salt?.CopyTo(_input);
 
             var hash = _hashAlgorithm.Compute(_input);
 

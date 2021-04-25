@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Fash.CLI": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\\\Users\\\\masla\\\\Downloads\\\\82951.jpg\" SHA512"
+    }
+  }
+}

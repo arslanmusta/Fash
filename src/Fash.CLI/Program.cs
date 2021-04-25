@@ -4,40 +4,45 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Fash.Lib;
 
 namespace Fash.CLI
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            args = new[] { "C:\\Users\\masla\\Downloads\\82951.jpg", "MD5"};
+            //args = new[] { "C:\\Users\\masla\\Downloads\\82951.jpg", "SHA512"};
             
             var filePath = args[0];
             var algorithm = args[1];
             
-            HashAlgorithm hashAlgorithm = algorithm switch
+            IHashAlgorithm hashAlgorithm = algorithm switch
             {
-                "SHA512" => new SHA512Managed(),
-                "SHA256" => new SHA256Managed(),
-                "MD5" => new MD5CryptoServiceProvider(),
-                _ => new SHA1Managed()
+                "SHA512" => new Sha512(),
+                "SHA256" => new Sha256(),
+                "MD5" => new Md5(),
+                _ => new Sha256()
             };
             
             if (filePath != null)
             {
                 using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-                var hash = hashAlgorithm.ComputeHash(fs);
 
-                var stringBuilder = new StringBuilder();
-                    
-                foreach (var b in hash)
-                {
-                    stringBuilder.Append(b.ToString("x2"));
-                }
+                var hasher = new HasherBuilder()
+                    .SetInput(fs)
+                    .SetAlgorithm(hashAlgorithm)
+                    .SetRepresentation(new HexRepresentation()
+                    {
+                        IsUppercase = true
+                    })
+                    .Build();
 
-                Console.WriteLine(stringBuilder.ToString());
+                var result = hasher.Hash();
+
+                Console.WriteLine(result);
             }
+
         }
     }
 }
