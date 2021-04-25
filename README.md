@@ -1,2 +1,2 @@
 # Fash
-Fast hashing application on right-click context.
+Fast is a file hashing application on right-click context.
