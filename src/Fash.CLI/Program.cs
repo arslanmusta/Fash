@@ -40,6 +40,9 @@ namespace Fash.CLI
                 Console.WriteLine(result);
             }
 
+            Console.WriteLine("Type a key to exit.");
+            Console.ReadKey();
+
         }
     }
 }
