@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Fash.UI": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\\\test.txt"
+    }
+  }
+}
