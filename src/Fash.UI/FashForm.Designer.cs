@@ -52,6 +52,7 @@ namespace Fash.UI
             // 
             this.HashResultTextBox.Location = new System.Drawing.Point(19, 59);
             this.HashResultTextBox.Name = "HashResultTextBox";
+            this.HashResultTextBox.ReadOnly = true;
             this.HashResultTextBox.Size = new System.Drawing.Size(709, 23);
             this.HashResultTextBox.TabIndex = 5;
             // 
@@ -72,7 +73,7 @@ namespace Fash.UI
             this.HashComboBox.Name = "HashComboBox";
             this.HashComboBox.Size = new System.Drawing.Size(121, 23);
             this.HashComboBox.TabIndex = 3;
-            this.HashComboBox.SelectedIndexChanged += new System.EventHandler(this.HashComboBox_SelectedIndexChanged_1);
+            this.HashComboBox.SelectedIndexChanged += new System.EventHandler(this.HashComboBox_SelectedIndexChanged);
             // 
             // FashForm
             // 
