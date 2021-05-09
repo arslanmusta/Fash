@@ -56,5 +56,14 @@ namespace Fash.UI
                 .SetAlgorithm(hashAlgorithm)
                 .Build().Hash();
         }
+
+        private void CompareButton_Click(object sender, EventArgs e)
+        {
+            var expectedHash = this.CompareTextBox.Text.ToLower();
+            var calculatedHash = this.HashResultTextBox.Text;
+
+            this.CompareResultLabel.Visible = true;
+            this.CompareResultLabel.Text = expectedHash == calculatedHash ? "Comparison successful" : "Comparison failed";
+        }
     }
 }
