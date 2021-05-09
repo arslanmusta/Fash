@@ -33,7 +33,12 @@ namespace Fash.UI
             this.HashResultTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.HashComboBox = new System.Windows.Forms.ComboBox();
+            this.CompareGroupBox = new System.Windows.Forms.GroupBox();
+            this.CompareResultLabel = new System.Windows.Forms.Label();
+            this.CompareButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.HashPanelGroupBox.SuspendLayout();
+            this.CompareGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // HashPanelGroupBox
@@ -75,16 +80,57 @@ namespace Fash.UI
             this.HashComboBox.TabIndex = 3;
             this.HashComboBox.SelectedIndexChanged += new System.EventHandler(this.HashComboBox_SelectedIndexChanged);
             // 
+            // CompareGroupBox
+            // 
+            this.CompareGroupBox.Controls.Add(this.CompareResultLabel);
+            this.CompareGroupBox.Controls.Add(this.CompareButton);
+            this.CompareGroupBox.Controls.Add(this.textBox1);
+            this.CompareGroupBox.Location = new System.Drawing.Point(31, 142);
+            this.CompareGroupBox.Name = "CompareGroupBox";
+            this.CompareGroupBox.Size = new System.Drawing.Size(746, 148);
+            this.CompareGroupBox.TabIndex = 2;
+            this.CompareGroupBox.TabStop = false;
+            this.CompareGroupBox.Text = "Compare";
+            // 
+            // CompareResultLabel
+            // 
+            this.CompareResultLabel.AutoSize = true;
+            this.CompareResultLabel.Location = new System.Drawing.Point(117, 96);
+            this.CompareResultLabel.Name = "CompareResultLabel";
+            this.CompareResultLabel.Size = new System.Drawing.Size(36, 15);
+            this.CompareResultLabel.TabIndex = 2;
+            this.CompareResultLabel.Text = "result";
+            this.CompareResultLabel.Visible = false;
+            // 
+            // CompareButton
+            // 
+            this.CompareButton.Location = new System.Drawing.Point(19, 92);
+            this.CompareButton.Name = "CompareButton";
+            this.CompareButton.Size = new System.Drawing.Size(75, 23);
+            this.CompareButton.TabIndex = 1;
+            this.CompareButton.Text = "Compare";
+            this.CompareButton.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(19, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(709, 23);
+            this.textBox1.TabIndex = 0;
+            // 
             // FashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 326);
+            this.Controls.Add(this.CompareGroupBox);
             this.Controls.Add(this.HashPanelGroupBox);
             this.Name = "FashForm";
             this.Text = "Fash";
             this.HashPanelGroupBox.ResumeLayout(false);
             this.HashPanelGroupBox.PerformLayout();
+            this.CompareGroupBox.ResumeLayout(false);
+            this.CompareGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -95,6 +141,11 @@ namespace Fash.UI
         private System.Windows.Forms.TextBox HashResultTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox HashComboBox;
+        private System.Windows.Forms.GroupBox CompareGroupBox;
+        private System.Windows.Forms.Button CompareButton;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label CompareLabel;
+        private System.Windows.Forms.Label CompareResultLabel;
     }
 }
 
