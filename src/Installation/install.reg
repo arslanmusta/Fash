@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\*\shell\Fash]
-@="&CheckSum"
+@="&Fash"
 
 [HKEY_CLASSES_ROOT\*\shell\Fash\command]
-@="C:\\projects\\Fash\\src\\Fash.CLI\\bin\\Debug\\net5.0\\Fash.CLI.exe \"%V\" SHA512"
+@="C:\\projects\\Fash\\src\\Fash.UI\\bin\\Debug\\net5.0-windows\\Fash.UI.exe \"%V\" "
