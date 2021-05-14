@@ -35,10 +35,10 @@ namespace Fash.UI
 
             this.HashComboBox.DataSource = new List<KeyValuePair<string, IHashAlgorithm>>
             {
-                new KeyValuePair<string, IHashAlgorithm>("SHA512", new Sha512()),
-                new KeyValuePair<string, IHashAlgorithm>("SHA256", new Sha256()),
-                new KeyValuePair<string, IHashAlgorithm>("SHA1", new Sha1()),
-                new KeyValuePair<string, IHashAlgorithm>("MD5", new Md5())
+                new("SHA512", new Sha512()),
+                new("SHA256", new Sha256()),
+                new("SHA1", new Sha1()),
+                new("MD5", new Md5())
             };
             this.HashComboBox.ValueMember = "Value";
             this.HashComboBox.DisplayMember = "Key";
